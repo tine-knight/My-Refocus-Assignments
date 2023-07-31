@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* set background color */
+body {
+  background-image: url(covid.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+ 
+ 
+}
+
+form{
+   width: 500px;
+   height: 700px;
+   margin: auto;
+   margin-top: 20px;
+   font-size: x-large;
+}
+
+h2{
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+
+

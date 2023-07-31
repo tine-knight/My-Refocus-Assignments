@@ -1,0 +1,30 @@
+/* Hide all div containers initially */
+.mobile,
+.tablet,
+.pc {
+  display: none;
+}
+
+/* Show mobile class on mobile devices */
+@media screen and (min-width: 320px) and (max-width:668px) {
+  .mobile {
+    display: block;
+  }
+}
+/* Show tablet class on tablets */
+
+@media  screen and (min-width: 668px) and (max-width:992px) {
+  .tablet {
+    display: block;
+
+  }
+}
+
+
+/* Show PC class on desktops */
+@media screen and (min-width: 992px) {
+  .pc {
+    display: block;
+ 
+  }
+}

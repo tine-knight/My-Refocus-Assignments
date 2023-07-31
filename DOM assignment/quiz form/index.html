@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Forms</title>
+        <link rel="stylesheet" href="index.css"/>
+    </head>
+    <body>
+        <form name="quiz" id="quizForm">
+            <h1>QUIZ</h1>
+            <br>
+            <br>
+            <div class="form-control">
+                <div id="errorQ1" class="error"> </div>
+                <div>
+                    <label>Question 1: What is the capital of the Philippines?</label><br>
+                    <input type="text" id="q1-answer" name="q1" placeholder="Answer"/>
+                </div>
+            </div>
+            <br>
+            <div class="form-control">
+                <div id="errorQ2" class="error"> </div>
+                <div>
+                    <label>Question 2: What is the value of x? x = 3 + 2*5</label><br>
+                    <input type="radio" name="q2" value="25"/>25<br>
+                    <input type="radio" name="q2" value="13"/>13<br>
+                    <input type="radio" name="q2" value="18"/>18<br>
+                  
+                </div>
+            </div>
+            <br>
+            <div class="form-control">
+                <div id="errorQ3" class="error"> </div>
+                <div>
+                    <label>Which of the following birds can fly? Choose 3 correct answers.</label>
+                    <br>
+                    <label><input type="checkbox" name="q3" value="parrot"> Parrot</label><br>
+                    <label><input type="checkbox" name="q3" value="eagle">Eagle</label><br>
+                    <label><input type="checkbox" name="q3" value="penguin">Penguin</label><br>
+                    <label><input type="checkbox" name="q3" value="crow">Crow</label>
+                </div>
+            </div>
+            <div>
+            <button type="button" id="errorQ1; errorQ2; errorQ3" onclick="checkAnswerQ1(); checkAnswerQ2(); checkAnswerQ3()">Submit</button>
+            <input type="button" value="Reset" onclick="resetForm()">
+            </div>
+        </form>
+            
+    <script>
+        const correctAnswers = {
+          q1: "manila",
+          q2: "13",
+          q3: ["parrot", "eagle", "crow"]
+        };
+
+        function checkAnswerQ1() {
+          const answer = document.getElementById("q1-answer").value;
+          if (answer.toLowerCase() === correctAnswers.q1) {
+            alert(" Question 1 :   Correct!");
+          } else {
+            alert("Question 1 :   Incorrect. Please try again.");
+          }
+        }
+
+        function checkAnswerQ2() {
+          const selectedAnswer = document.querySelector('input[name="q2"]:checked');
+          if (selectedAnswer !== null && selectedAnswer.value === correctAnswers.q2) {
+            alert("Question 2 :   Correct!");
+          } else {
+            alert("Question 2 :   Incorrect. Please try again.");
+          }
+        }
+
+        function checkAnswerQ3() {
+          const selectedBirds = document.querySelectorAll('input[name="q3"]:checked');
+          let numCorrect = 0;
+  for (let i = 0; i < selectedBirds.length; i++) {
+    if (correctAnswers.q3.includes(selectedBirds[i].value)) {
+      numCorrect++;
+    }
+  }
+  if (numCorrect === 3) {
+    alert("Question 3 :   Congratulations! You chose the 3 correct birds that can fly.");
+  } else {
+    alert(`Question 3 :   Sorry, you chose ${numCorrect} correct bird(s) that can fly. Please try again.`);
+  }
+}
+
+document.getElementById("q1-submit").addEventListener("click", checkAnswerQ1);
+document.getElementById("q2-submit").addEventListener("click", checkAnswerQ2);
+document.getElementById("q3-submit").addEventListener("click", checkAnswerQ3);
+
+function resetForm() {
+  document.getElementById("quizForm").reset();
+}
+
+</script>
+    </body>
+</html>
