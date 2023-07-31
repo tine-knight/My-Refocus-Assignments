@@ -1,1 +1,1 @@
-# My-Refocus-Assignments
+Hi, my name is Kristine Pascual. I am 24 years old and I live in Cagayan. I'm interested in technology. I've always been fascinated by how computers and the internet work. Web development gives me the opportunity to learn more about these technologies and how they can be used to create something new and exciting
